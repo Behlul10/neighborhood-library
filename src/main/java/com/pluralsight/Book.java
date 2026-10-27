@@ -20,7 +20,7 @@ public class Book {
         this.checkedOutTo = name;
     }
 
-    public void chekdIn() {
+    public void checkIn() {
         this.isCheckedOut = false;
         this.checkedOutTo = "";
     }

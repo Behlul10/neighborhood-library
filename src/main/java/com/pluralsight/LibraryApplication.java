@@ -1,7 +1,4 @@
 package com.pluralsight;
-
-import java.io.PushbackReader;
-import java.sql.ClientInfoStatus;
 import java.util.Scanner;
 
 public class LibraryApplication {
@@ -9,8 +6,7 @@ public class LibraryApplication {
         Scanner myScanner = new Scanner(System.in);
 
         Book[] booksList = new Book[20];
-        int count = 0;
-        int command = 0;
+        int command;
 
         for (int i = 0; i < booksList.length; i++) {
             booksList[i] = new Book(
@@ -50,24 +46,14 @@ public class LibraryApplication {
                 }
             }
         } while (command != 3);
-    /*
-        System.out.println("First Book ID: " + booksList[0].getId());
-        System.out.println("Last Book title: " + booksList[19].getTitle());
-
-        booksList[0].checkOut("Davey");
-        System.out.println("Who has book 1? " + booksList[0].getCheckedOutTo());
-
-     */
     }
 
 
     public static void listAllBook(Book[] listOfBooks, Scanner methodScanner) {
-        String userInput;
         int command;
         System.out.println("######################################################");
         System.out.println("Here is the list of all available books you can check out below!");
 
-        outerLoop:
         for (Book item : listOfBooks) {
             if (item != null) {
                 if (!item.isCheckedOut()) {
